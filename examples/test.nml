@@ -1,0 +1,21 @@
+load 'Hello, world ('
+    pop a
+load 0
+    pop b
+load 6
+    pop c
+load ')\n'
+    pop d
+
+loop b lower c l1
+
+def l1
+    out a
+    push b
+    pop m
+    str m
+    out m
+    out d
+
+    inc b
+ret
