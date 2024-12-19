@@ -106,6 +106,7 @@ sqrt - variable = square root of variable
 rnd - variable = random from 0 to 100 included
 
 utils:
+unx - variable = current_time_in_unix_seconds
 str - variable = str(variable)
 exec - build & interpret code from variable
 ```
