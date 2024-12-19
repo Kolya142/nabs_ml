@@ -34,7 +34,7 @@ def compiler(commands: List[Command], state: State) -> bytes:
         if not c[1]:
             state.functions[f] = (state.functions[f][0], True)
             x = compiler(state.functions[f][0], state)
-            x = b'\x02'+tt(f)+int.to_bytes(len(x), 1)+compiler(state.functions[f][0], state)
+            x = b'\x02'+tt(f)+int.to_bytes(len(x), 3)+compiler(state.functions[f][0], state)
             bytecode.extend(x)
 
     for i, cmd in enumerate(commands):
