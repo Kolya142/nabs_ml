@@ -78,34 +78,34 @@ n byte - function body code (b)
 ## std
 ```
 stack:
-load
-pop
-push
+load - push(imm)
+pop - variable = pop()
+push - push(variable)
 
 io:
-out
-in
-fread
-fwrite
+out - print variable
+in - write user input to variable
+fread - save file with name variable data to variable
+fwrite - save pop() to file with name variable
 
 functions:
-lz
-call
-bz
-ez
+lz - call function with name in variable, if pop() < pop()
+call - call function with name in variable
+bz - call function with name in variable, if pop() > pop()
+ez - call function with name in variable, if pop() == pop()
 
 math:
-inc
-dec
-add
-sub
-mul
-div
-pow
-sqrt
-rnd
+inc - variable ++
+dec - variable --
+add - variable = variable add pop()
+sub - variable = variable sub pop()
+mul - variable = variable mul pop()
+div - variable = variable div pop()
+pow - variable = variable pow pop()
+sqrt - variable = square root of variable
+rnd - variable = random from 0 to 100 included
 
 utils:
-str
-exec
+str - variable = str(variable)
+exec - build & interpret code from variable
 ```

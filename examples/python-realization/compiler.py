@@ -18,15 +18,17 @@ def compiler(commands: List[Command], state: State) -> bytes:
         if f:
             tf.append(i)
             if cmd.fn == 'ret':
-                state.functions[f] = (fc, False)
+                state.functions[f] = (fc.copy(), False)
                 fc = []
                 f = None
+                continue
             fc.append(cmd)
             continue
         if cmd.fn == 'def' and not f:
             tf.append(i)
             f = cmd.args[0]
             fc = []
+            state.functions[f] = ([], False)
             continue
 
     for f in state.functions:
