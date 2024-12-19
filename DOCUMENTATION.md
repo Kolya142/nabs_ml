@@ -2,15 +2,22 @@
 
 
 ## how to use
-1. change `test.nml`
-2. run `python3 interpreter.py`
-
+Run base64: `echo -e '<base64 encoded bytecode>' | python3 interpreter.py b64 _` \
+Run bytecode: `python3 interpreter.py byte <filename.nmlx>` \
+Run sourcecode: `python3 interpreter.py code <filename.nml>` \
+Build to bytecode: `python3 interpreter.py build <filename.nml>`
 
 ## how to make
+### full version
 1. split every line to word
 2. detect command
 3. compile commands to bytecode
-4. interpret
+4. decode bytecode
+5. interpret
+### only-interpret version
+1. read bytecode
+2. decode bytecode
+3. interpret
 
 
 ## syntax
@@ -64,8 +71,8 @@ n byte - argument name (b)
 1 byte - function name size (1) 
 n byte - function name (a) 
 
-1 byte - function body size (1) # todo: change to 3 bytes 
-n byte - function body name (b)
+3 byte - function body size (1)
+n byte - function body code (b)
 ```
 
 ## std
